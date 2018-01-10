@@ -130,8 +130,8 @@ public class AppboyReactBridge extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void submitFeedback(String replyToEmail, String message, boolean isReportingABug, Callback callback) {
-    boolean result = Appboy.getInstance(getReactApplicationContext()).submitFeedback(replyToEmail, message, isReportingABug);
-    reportResultWithCallback(callback, null, result);
+    Appboy.getInstance(getReactApplicationContext()).submitFeedback(replyToEmail, message, isReportingABug);
+    reportResultWithCallback(callback, null, null);
   }
 
   @ReactMethod
